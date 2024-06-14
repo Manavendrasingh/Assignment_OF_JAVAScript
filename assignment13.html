@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            width: 100vw;
+            height: 100vh;
+            border: 2px solid black;
+            display: flex;
+            
+            align-items: center;
+            flex-direction: column;
+        }
+        .iTags{
+            width: 300px;
+            height: 200px;
+            
+           
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .itag1,.itag2,.itag3{
+            padding: 5px;
+            margin: 5px;
+            width: 200px;
+            height: 50px;
+            border-radius: 1vw;
+        }
+        .btn{
+            padding: 5px;
+            width:60px;
+            height: 40px;
+            margin: 5px;
+            background-color: aquamarine;
+            border: 2px solid black;
+            border-radius: 2vw;
+        }
+
+        .display{
+            width: 200px;
+            height: 100px;
+            margin:3px;
+            /* border: 2px solid black;   */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <div class = "container">
+        <div class = "iTags">
+            <input class = "itag1" placeholder="Brand">
+            <input class = "itag2" placeholder="Model">
+            <input class = "itag3" placeholder="Year">
+        </div>
+        <button class = "btn">SAVE</button>
+        <!-- <div class="display">
+            
+        </div> -->
+    </div>
+    
+   <script>
+    let input1 = document.querySelector(".itag1");
+    let input2 = document.querySelector(".itag2");
+    let input3 = document.querySelector(".itag3");
+    let button = document.querySelector(".btn");
+    let cont = document.querySelector(".container");
+
+    button.addEventListener("click",()=>{
+        let a  = input1.value;
+        let b =  input2.value;
+        let c =  input3.value;
+        let dis = document.createElement("div");
+        dis.classList.add("display");
+
+        let ele1 = document.createElement("p");
+        let ele2 = document.createElement("p");
+        ele1.innerText = a;
+        ele2.innerHTML = c + ":" + b;
+
+        dis.appendChild(ele1);
+        dis.appendChild(ele2);
+
+       // display.innerHTML = "";
+        cont.appendChild(ele1);
+        cont.appendChild(ele2);
+
+    })
+
+   </script>
+</body>
+</html>

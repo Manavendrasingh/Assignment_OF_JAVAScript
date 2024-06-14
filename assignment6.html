@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		table,
+		th,
+		td {
+			border: 1px solid black;
+			text-align: center;
+			width: 30px;
+			height: 20px;
+		}
+		
+
+		.container {
+			width: 100vw;
+			height: 100vh;
+			border: 2px solid black;
+			display: flex;
+			align-items: center;
+			flex-direction: column;
+
+
+		}
+
+		.child1 {
+			
+			border: 2px solid black;
+		}
+
+		.child2 {
+			width: 200px;
+			height: 40px;
+			padding: 5px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+		}
+		button{
+            width: 120px;
+			border: 2px solid black;
+			padding: 3px;
+			border-radius: 1vw;
+			background-color: aqua;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<div class = "child2"> 
+			<button class = "btn"> add row</button>
+			
+		</div>
+		<div class="child1">
+			<table class = "table">
+				<tr>
+					<th>S.N</th>
+					<th>enter name </th>
+					<th>
+						mobile number
+					</th>
+				</tr>
+
+				
+			</table>
+		</div>	
+	    
+	
+	</div>
+	<script>
+         let tbl = document.querySelector(".table");
+		 let btn = document.querySelector(".btn");
+        
+		 btn.addEventListener("click",()=>{
+			 let tr = document.createElement("tr");
+			 let dt1 = document.createElement("td");
+			 let dt2 = document.createElement("td");
+			 let dt3 = document.createElement("td");
+			 tr.appendChild(dt1);
+			 tr.appendChild(dt2);
+			 tr.appendChild(dt3);
+			 //console.dir(dt);
+			 console.dir(tr);
+			 tbl.appendChild(tr);
+
+
+		 })
+
+
+          
+	</script>
+</body>
+
+</html>

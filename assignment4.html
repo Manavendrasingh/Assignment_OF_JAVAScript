@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .container{
+        width: 100vw;
+        height: 10vh;
+        background-color: lightpink;
+        border: 2px solid black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+    select{
+        width: 100px;
+        height: 35px;
+        border: 2px solid black;
+        border-radius: 3vw;
+        padding-left: 15px;
+        
+        background-color:lightcyan;
+    }
+    option{
+        background-color: aqua;
+
+    }
+    .display{
+        width: 100vw;
+        height: 80vh;
+        margin-top: auto;
+        border: 2px solid blue;
+        display: flex;
+        flex-direction: column; 
+        justify-content: center;
+        align-content: center;
+    }
+    .box{
+        width: 200px;
+        height: 40px;
+        border: 2px solid black;
+        margin: 2px;
+        border-radius: 3vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .msg{
+        width: 100vw;
+        height: 10vh;
+        border: 2px solid black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+
+</style>
+<body>
+    <div class = "msg"></div>
+    <div class="container">
+       
+            <select class = "list">
+                <option> Jeans</option>
+                <option> shirt</option>
+                <option> T-shirt</option>
+                <option> jacket</option>
+                <option> shoes</option>
+                <option> books</option>
+                <option> laptop</option>
+                <option> mobile</option>
+                <option> school bags</option>
+                <option> watch</option>
+                <option> chair</option>
+
+            </select>
+            
+        
+    </div>
+    <div class="display"></div>
+    
+    <script>
+         let list = document.querySelector(".list");
+         let dis = document.querySelector(".display");
+         let msg = document.querySelector(".msg");
+         list.addEventListener("click",(event)=>{
+            if(dis.innerText == "")
+            {
+                goToAddContent();
+            }
+            else{
+               let innerContent = dis.innerText.split("\n\n");
+               console.log(innerContent);
+               if(innerContent.includes(list.value , 0))
+               {
+                      msg.innerHTML = "";
+                      let p = document.createElement("p");
+                      p.innerText = `${list.value} is already included`;
+                      msg.appendChild(p);
+               }
+               else{
+            
+                goToAddContent();
+               }
+            }
+
+         })
+         function goToAddContent(){
+            let div = document.createElement("div");
+                    div.classList.add("box");
+                    div.innerHTML = `<p>${list.value}</p>`;
+                    dis.appendChild(div);
+           // let innerContent = dis.innerText.split("\n\n");
+            //console.log(innerContent);
+
+         }
+    
+
+    </script>
+</body>
+</html>

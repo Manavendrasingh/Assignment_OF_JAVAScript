@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+</style>
+<body>
+    
+    <h1>product list </h1>
+    <ul class="list">
+
+        <li>
+            <span>shirt</span>
+            <button class = "shirt">remove</button>
+        </li>
+
+        <li>
+            <span>jeans</span>
+            <button class = "jeans">remove</button>
+        </li>
+
+        <li>
+            <span>t-shirt</span>
+            <button class = "T-shirt">remove</button>
+        </li>
+
+        <li>
+            <span>denim jacket</span>
+            <button class = "Denim jacket">remove</button>
+        </li>
+
+        <li>
+            <span>Casualshoes</span>
+            <button class = "Casualshoes">remove</button>
+        </li>
+
+    </ul>
+    <script>
+        let cont = document.querySelector("ul");
+        let list = document.querySelectorAll("li");
+        console.dir(list);
+        for(let ele of list)
+        {
+            let btn = ele.querySelector("button");
+            //console.log(btn);
+            btn.addEventListener("click",function(){
+                ele.innerHTML = "";
+                cont.removeChild(ele);
+            })
+        }
+        
+        
+        
+        
+    </script>
+
+</body>
+</html>

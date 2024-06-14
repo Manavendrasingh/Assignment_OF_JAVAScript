@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+    .cont {
+			width: 100vw;
+			height: 100vh;
+			border: 2px solid black;
+			display: flex;
+            justify-content: center;
+			align-items: center;
+			flex-direction: column;
+
+
+		}
+</style>
+<body>
+    <div class="cont">
+        <input class = "itag"> 
+        <button class = "btn"> add</button>
+        <div class="dis">
+            
+        </div>
+    </div>
+</body>
+<script>
+     let input = document.querySelector(".itag");
+     let btn = document.querySelector(".btn");
+     let dis = document.querySelector(".dis");
+      btn.addEventListener("click",()=>{
+        let p = document.createElement("p");
+        let arr = input.value.split('@');
+        let name = arr[0];
+        //console.log(typeof name);
+        name = name.substring(0,Math.floor(name.length/2));
+        name += "...";
+        //console.log(name);
+        p.innerText = `Output : ${name}@${arr[1]}`;
+        dis.appendChild(p);
+      })
+</script>
+</html>

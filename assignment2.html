@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse string</title>
+</head>
+<style>
+    .container{
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .child{
+        width: 400px;
+        height: 300px;
+        border: 2px solid black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+    input{
+        width:50vw;
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="child">
+            <input type="text" class = "inputTag">
+            <button class = "btn">reverse</button>
+        </div>
+    </div>
+</body>
+<script>
+     let inputTag = document.querySelector(".inputTag");
+     console.log(inputTag);
+     let btn = document.querySelector(".btn");
+
+      btn.addEventListener("click",function() {
+        console.log(inputTag.value);
+        let text = inputTag.value.split("").reverse().join("");
+        inputTag.value = text;
+      })
+    // console.log(text);
+</script>
+</html>
